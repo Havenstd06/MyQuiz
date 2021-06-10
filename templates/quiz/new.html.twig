@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Quiz - New Quiz{% endblock %}
+
+{% block body %}
+
+    <div class="max-w-4xl mx-auto bg-white bg-opacity-30 rounded-xl shadow-2xl py-6 px-6">
+        <div class="flex flex-col space-y-6">
+            <h3 class="text-center text-2xl text-gray-100 font-semibold">
+                Create new quiz!
+            </h3>
+
+            <form action="" method="POST" class="grid grid-cols-6 gap-4 max-w-5xl mx-auto">
+                <div class="col-span-3">
+                    <label for="name" class="block text-sm font-medium leading-5 text-gray-100">
+                        Category Name
+                    </label>
+                    <input id="name" name="name" type="text" class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" autocomplete="off" placeholder="Epitech" required>
+                </div>
+
+                <div class="col-span-2">
+                    <label for="number" class="block text-sm font-medium leading-5 text-gray-100">
+                        Number of questions (max 20)
+                    </label>
+                    <input id="number" name="number" type="number" min="1" max="20" class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" autocomplete="off" placeholder="10" required>
+                </div>
+                <div class="col-span-1 flex items-end">
+                    <button type="submit" class="py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-700 shadow-sm hover:bg-indigo-600 focus:outline-none focus:shadow-outline-blue active:bg-indigo-600 transition duration-150 ease-in-out">
+                        Next
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

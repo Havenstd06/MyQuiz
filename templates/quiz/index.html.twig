@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Quiz - Categories{% endblock %}
+
+{% block body %}
+
+    {% if categories %}
+    <div class="py-6 flex flex-col justify-center sm:py-12">
+        <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 px-4">
+            {% for categorie in categories %}
+            <a href="{{ path('quiz.categorie', { 'id': categorie.id, 'number': 0 }) }}" class="bg-gradient-to-r from-indigo-500 to-blue-700 border-indigo-600 dark:bg-gray-800 bg-opacity-95 | p-4 rounded-lg border-2 | flex justify-around cursor-pointer | hover:from-blue-700 hover:to-indigo-500 | transition-colors duration-500">
+                <div class="flex flex-col justify-center">
+                    <p class="text-gray-50 dark:text-gray-300 font-semibold">
+                        {{ categorie.name }}
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Quiz - {{ categorie.name }} End{% endblock %}
+
+{% block body %}
+
+    <div class="max-w-4xl mx-auto mt-7">
+        <h1 class="text-center text-7xl font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-red-600">
+            Well done!
+        </h1>
+
+        <h3 class="text-center text-4xl font-semibold tracking-wider text-green-500 mt-8">
+            Your score is {{ score }}/{{ categorie.getQuestions | length }} !
+        </h3>
+    </div>
+
+{% endblock %}

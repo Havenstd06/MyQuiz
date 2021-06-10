@@ -1,0 +1,57 @@
+<div class="text-gray-50 bg-transparent">
+    <div class="flex flex-col p-5 md:items-center md:flex-row md:justify-between">
+        <div class="flex flex-wrap items-center justify-center text-base">
+            <a href="{{ path('home') }}" class="mr-5 font-semibold bg-yellow-200 px-3 py-1 rounded-md text-gray-900 hover:text-gray-800">
+                Home
+            </a>
+            <a href="{{ path('quiz') }}" class="mr-5 font-semibold bg-yellow-200 px-3 py-1 rounded-md text-gray-900 hover:text-gray-800">
+                Categories
+            </a>
+            {% if app.user %}
+                <a href="{{ path('quiz.new') }}" class="mr-5 font-semibold bg-yellow-200 px-3 py-1 rounded-md text-gray-900 hover:text-gray-800">
+                    New Quiz
+                </a>
+
+                {% if app.user.role %}
+                    <a href="{{ path('admin.index') }}" class="mr-5 font-semibold bg-yellow-200 px-3 py-1 rounded-md text-gray-900 hover:text-gray-800">
+                        Admin
+                    </a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div>
+            {% if not app.user %}
+                <a href="{{ path('history') }}" class="items-center ml-5 px-4 py-2.5 text-center font-semibold text-gray-50 transition duration-200 ease-in-out transform bg-gradient-to-l from-yellow-600 to-indigo-400 hover:from-indigo-400 hover:to-yellow-600 rounded-lg hover:bg-gray-900 focus:ring focus:outline-none">
+                    History
+                </a>
+
+                <a href="{{ path('register') }}"
+                   class="ml-5 items-center px-4 py-2.5 font-semibold text-center text-gray-50 transition duration-200 ease-in-out transform bg-gradient-to-r from-pink-600 to-pink-700 rounded-lg hover:from-pink-700 hover:to-pink-600 focus:ring focus:outline-none">
+                    Register
+                </a>
+                <a href="{{ path('login') }}"
+                   class="items-center ml-5 px-4 py-2.5 text-center font-semibold text-gray-50 transition duration-200 ease-in-out transform bg-gradient-to-r from-purple-600 to-blue-400 hover:from-blue-600 hover:to-purple-400 rounded-lg hover:bg-gray-900 focus:ring focus:outline-none">
+                    Login
+                </a>
+            {% else %}
+                <a href="{{ path('user.profile', {id: app.user.id}) }}" class="ml-5 items-center px-4 py-2.5 font-semibold text-center text-gray-50 transition duration-200 ease-in-out transform bg-gradient-to-r from-green-600 to-blue-700 rounded-lg hover:from-blue-700 hover:to-green-600 focus:ring focus:outline-none">
+                    History
+                </a>
+
+                <a href="{{ path('user.settings', {id: app.user.id}) }}" class="ml-5 items-center px-4 py-2.5 font-semibold text-center text-gray-50 transition duration-200 ease-in-out transform bg-gradient-to-r from-green-600 to-blue-700 rounded-lg hover:from-blue-700 hover:to-green-600 focus:ring focus:outline-none">
+                    Settings
+                </a>
+
+                <a href="{{ path('logout') }}"
+                   class="items-center ml-5 px-4 py-2.5 text-center font-semibold text-gray-50 transition duration-200 ease-in-out transform bg-gradient-to-r from-purple-600 to-blue-400 hover:from-blue-600 hover:to-purple-400 rounded-lg hover:bg-gray-900 focus:ring focus:outline-none">
+                    Logout
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="flex justify-center">
+    <h1 class="text-6xl font-semibold tracking-widest text-gray-50">
+        My Quiz
+    </h1>
+</div>

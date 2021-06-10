@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Quiz{% endblock %}
+
+{% block body %}
+    <div class="max-w-xl mx-auto flex flex-col">
+        <div class="flex justify-between items-center">
+            <img src="https://quizplanet.game/_nuxt/img/alien_languages.994baca.png" class="w-64" alt="Fusée">
+
+            <h1 class="text-4xl text-gray-50">
+                Défiez vos amis !
+            </h1>
+        </div>
+        <div class="flex justify-between items-center">
+            <h1 class="text-4xl text-gray-50">
+                Lancez vous !
+            </h1>
+            <img src="https://quizplanet.game/_nuxt/img/rocket.83144ab.png" class="w-64" alt="Fusée">
+        </div>
+
+        <div class="mx-auto">
+            <a href="{{ path('quiz') }}" class="bg-yellow-500 hover:bg-yellow-600 rounded-full shadow-lg text-white text-3xl px-4 py-2">
+                Go !
+            </a>
+        </div>
+    </div>
+{% endblock %}

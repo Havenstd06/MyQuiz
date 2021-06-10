@@ -1,0 +1,23 @@
+{% for message in app.flashes('success') %}
+    <div class="relative bg-green-600">
+        <div class="max-w-screen-xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+            <div class="pr-16 sm:text-center sm:px-16">
+                <p class="font-medium text-white">
+                    {{ message }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% for message in app.flashes('error') %}
+    <div class="relative bg-red-600">
+        <div class="max-w-screen-xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+            <div class="pr-16 sm:text-center sm:px-16">
+                <p class="font-medium text-white">
+                    {{ message }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
